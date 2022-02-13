@@ -58,8 +58,6 @@ end
 
 M.apply = function()
 
-    local isItalic = vim.g.dracula_italic_comment == true
-
 	local highlight = function(group, fg, bg, attr, sp)
 		fg = fg and "guifg=" .. fg or "guifg=NONE"
 		bg = bg and "guibg=" .. bg or "guibg=NONE"
@@ -78,7 +76,7 @@ M.apply = function()
 		highlight("Normal", colors.fg, colors.bg, nil, nil)
 	end
 	highlight("NormalFloat", colors.fg, colors.bg, nil, nil)
-	highlight("Comment", colors.comment, nil, isItalic and 'italic' or nil, nil)
+	highlight("Comment", colors.comment, nil, nil)
 	highlight("Constant", colors.yellow, nil, nil, nil)
 	highlight("String", colors.yellow, nil, nil, nil)
 	highlight("Character", colors.green, nil, nil, nil)
@@ -109,7 +107,7 @@ M.apply = function()
 	highlight("Special", colors.green, nil, nil, nil)
 	highlight("SpecialComment", colors.comment, nil, "ita", nil)
 	highlight("Error", colors.bright_red, nil, nil, nil)
-	highlight("Todo", colors.purple, nil, "bold,italic", nil)
+	highlight("Todo", colors.purple, nil, "bold", nil)
 	highlight("Underlined", colors.cyan, nil, "underline", nil)
 
 	highlight("Cursor", nil, nil, "reverse", nil)
@@ -226,7 +224,7 @@ M.apply = function()
 
   highlight("TSText", colors.orange, nil, nil, nil)
 	highlight("TSStrong", colors.orange, nil, "bold", nil)  -- bold
-	highlight("TSEmphasis", colors.yellow, nil, nil, nil)  -- italic
+	highlight("TSEmphasis", colors.yellow, nil, nil, nil)  
 	highlight("TSUnderline", colors.orange, nil, nil, nil)
 	highlight("TSTitle", colors.pink, nil, nil, nil)          -- title
 	highlight("TSLiteral", colors.yellow, nil, nil, nil)      -- inline code
@@ -245,7 +243,7 @@ M.apply = function()
 	highlight("htmlH4", colors.pink, nil, nil, nil)
 	highlight("htmlH5", colors.pink, nil, nil, nil)
 	highlight("htmlH6", colors.pink, nil, nil, nil)
-	highlight("htmlItalic", colors.purple, nil, nil, nil)
+	-- highlight("htmlItalic", colors.purple, nil, nil, nil)
 	highlight("htmlLink", colors.purple, nil, "underline", nil)
 	highlight("htmlSpecialChar", colors.yellow, nil, nil, nil)
 	highlight("htmlSpecialTagName", colors.cyan, nil, nil, nil)
@@ -255,7 +253,7 @@ M.apply = function()
 	highlight("htmlTitle", colors.white, nil, nil, nil)
 
 	-- Markdown
-	highlight("markdownBlockquote", colors.yellow, nil, "italic", nil)
+	highlight("markdownBlockquote", colors.yellow, nil, nil, nil)
 	highlight("markdownBold", colors.orange, nil, "bold", nil)
 	highlight("markdownCode", colors.green, nil, nil, nil)
 	highlight("markdownCodeBlock", colors.orange, nil, nil, nil)
@@ -271,7 +269,7 @@ M.apply = function()
 	highlight("markdownId", colors.purple, nil, nil, nil)
 	highlight("markdownIdDeclaration", colors.cyan, nil, nil, nil)
 	highlight("markdownIdDelimiter", colors.purple, nil, nil, nil)
-	highlight("markdownItalic", colors.yellow, nil, nil, nil)
+	-- highlight("markdownItalic", colors.yellow, nil, nil, nil)
 	highlight("markdownLinkDelimiter", colors.purple, nil, nil, nil)
 	highlight("markdownLinkText", colors.pink, nil, nil, nil)
 	highlight("markdownListMarker", colors.cyan, nil, nil, nil)
